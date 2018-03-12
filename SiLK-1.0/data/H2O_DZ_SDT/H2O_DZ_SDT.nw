@@ -1,0 +1,90 @@
+start tce_h2o
+
+echo
+
+memory 3500 mb
+
+#r_e geometry
+
+geometry units bohr
+##symmetry c1
+O    0.0        0.0    -0.009
+H    1.515263   0.0    -1.058898
+H   -1.515263   0.0    -1.058898
+end
+
+
+BASIS  "ao basis" 
+#BASIS SET: (4s) -> [2s]
+H    S
+     19.2406000              0.0328280        
+      2.8992000              0.2312080        
+      0.6534000              0.8172380        
+H    S
+      0.1776000              1.0000000        
+#BASIS SET: (9s,5p) -> [4s,2p]
+O    S
+   7816.5400000              0.0020310        
+   1175.8200000              0.0154360        
+    273.1880000              0.0737710        
+     81.1696000              0.2476060        
+     27.1836000              0.6118320        
+      3.4136000              0.2412050        
+O    S
+      9.5322000              1.0000000        
+O    S
+      0.9398000              1.0000000        
+O    S
+      0.2846000              1.0000000        
+O    P
+     35.1832000              0.0195800        
+      7.9040000              0.1241890        
+      2.3051000              0.3947270        
+      0.7171000              0.6273750        
+O    P
+      0.2137000              1.0000000        
+END
+
+scf
+thresh 1.0e-10
+tol2e 1.0e-10
+singlet
+rhf
+end
+
+tce
+###freeze atomic
+ccsd
+tilesize 5
+thresh 1.0d-6
+end
+task tce energy
+
+#tce
+#freeze atomic
+#cisd
+#tilesize 5
+#thresh 1.0d-6
+#end
+#task tce energy
+
+#tce
+#freeze 1
+#cisd
+#tilesize 5
+#thresh 1.0d-6
+#end
+#task tce energy
+
+#tce
+#mbpt2
+#end
+
+#task tce energy
+
+#tce
+#ccsdt
+#end
+
+#task tce energy
+

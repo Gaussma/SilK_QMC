@@ -1,0 +1,33 @@
+start tce_n2
+
+echo
+
+#r_e geometry
+
+memory 3500 mb
+
+geometry units angstroms
+ symmetry d2h
+ N    0.0 0.0  0.595
+ N    0.0 0.0 -0.595
+end
+
+basis
+ N library sto-3g
+end
+
+scf
+ thresh 1.0e-10
+ tol2e 1.0e-10
+ singlet
+ rhf
+end
+
+tce
+ ###freeze atomic
+ ccsd
+ tilesize 5
+ thresh 1.0d-6
+end
+
+task tce energy

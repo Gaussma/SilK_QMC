@@ -1,0 +1,30 @@
+17 # version
+c2v # symmetry
+STH # basisset
+none # SD/SDT/none
+1 # nrows
+7 # ncols
+5 # number of e up
+5 # number of e down
+1       # initial number of kink
+150 # npass
+1500 # npass_diag
+30 # diag_every
+10 # first_diag
+10   # maximum of kinks in one time
+50   # nmax_states
+300000   # beta
+20000000 # p value 10^10
+0 # ham_rho_min
+1       # ncomb (output every n steps)
+$parfile # output directory name
+input/H2O_STO3G_c2v
+rho.dat # filename of rho
+1       # rho:  '1' for calculate, '0' for read from file
+1       # turn diagonalization on (1) or off (0)
+10      #seed index
+-30       #x_bar
+0      #n_occupied
+0         #switch_frozen
+130        #x_dimension
+
